@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shop All Products — UrbanCart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main class="container">
+  <div class="section-title"><h2>Shop All Products</h2></div>
+
+  <form class="filters-bar" id="filtersForm">
+    <div style="flex:2; min-width:180px;">
+      <label for="filterKeyword">Search</label>
+      <input type="text" id="filterKeyword" placeholder="Search by name, brand..." />
+    </div>
+    <div>
+      <label for="filterCategory">Category</label>
+      <select id="filterCategory"><option value="All">All Categories</option></select>
+    </div>
+    <div>
+      <label for="filterMinPrice">Min Price</label>
+      <input type="number" id="filterMinPrice" min="0" placeholder="0" />
+    </div>
+    <div>
+      <label for="filterMaxPrice">Max Price</label>
+      <input type="number" id="filterMaxPrice" min="0" placeholder="Any" />
+    </div>
+    <div>
+      <label for="filterSort">Sort By</label>
+      <select id="filterSort">
+        <option value="">Newest</option>
+        <option value="price_asc">Price: Low to High</option>
+        <option value="price_desc">Price: High to Low</option>
+        <option value="rating">Top Rated</option>
+        <option value="name">Name (A-Z)</option>
+      </select>
+    </div>
+    <div style="flex-direction:row; gap:8px; align-self:flex-end;">
+      <button type="submit" class="btn btn-primary btn-sm">Apply</button>
+      <button type="button" id="resetFiltersBtn" class="btn btn-outline btn-sm">Reset</button>
+    </div>
+  </form>
+
+  <div class="product-grid" id="productGrid"></div>
+  <div id="pagination" style="display:flex; gap:8px; justify-content:center; padding-bottom:40px;"></div>
+</main>
+
+<footer>
+  <div class="container">&copy; 2026 <span>UrbanCart</span>. Built as a Full Stack Internship Project.</div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
+<script src="js/products.js"></script>
+</body>
+</html>

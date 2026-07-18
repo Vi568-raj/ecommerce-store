@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Dashboard — UrbanCart</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div class="admin-layout">
+  <aside class="admin-sidebar">
+    <h3>Admin Panel</h3>
+    <button data-tab="dashboard" class="active">📊 Dashboard</button>
+    <button data-tab="products">📦 Products</button>
+    <button data-tab="orders">🧾 Orders</button>
+  </aside>
+
+  <div class="admin-main">
+
+    <section class="admin-panel" id="panel-dashboard">
+      <div class="section-title" style="margin-top:0;"><h2>Dashboard Overview</h2></div>
+      <div class="stat-grid" id="statGrid"></div>
+    </section>
+
+    <section class="admin-panel" id="panel-products" style="display:none;">
+      <div class="section-title" style="margin-top:0;">
+        <h2>Manage Products</h2>
+        <button id="addProductBtn" class="btn btn-accent btn-sm">+ Add Product</button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Image</th><th>Name</th><th>Category</th><th>Price</th><th>Stock</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="productsTableBody"></tbody>
+      </table>
+    </section>
+
+    <section class="admin-panel" id="panel-orders" style="display:none;">
+      <div class="section-title" style="margin-top:0;"><h2>All Orders</h2></div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Order ID</th><th>Customer</th><th>Date</th><th>Total</th><th>Status</th><th>Update Status</th></tr>
+        </thead>
+        <tbody id="ordersTableBody"></tbody>
+      </table>
+    </section>
+
+  </div>
+</div>
+
+<!-- Add/Edit Product Modal -->
+<div class="modal-overlay" id="productModal">
+  <div class="modal-box">
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+      <h2 id="productModalTitle" style="margin-bottom:0;">Add Product</h2>
+      <button type="button" id="closeModalBtn" aria-label="Close" style="font-size:1.4rem; line-height:1; color: var(--color-text-muted);">&times;</button>
+    </div>
+    <form id="productForm">
+      <div class="form-group">
+        <label for="pName">Product Name</label>
+        <input type="text" id="pName" name="name" required />
+      </div>
+      <div class="form-group">
+        <label for="pDescription">Description</label>
+        <textarea id="pDescription" name="description" rows="3" required></textarea>
+      </div>
+      <div class="row-2">
+        <div class="form-group">
+          <label for="pPrice">Price (₹)</label>
+          <input type="number" id="pPrice" name="price" min="0" step="0.01" required />
+        </div>
+        <div class="form-group">
+          <label for="pStock">Stock Quantity</label>
+          <input type="number" id="pStock" name="stock" min="0" required />
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="form-group">
+          <label for="pCategory">Category</label>
+          <input type="text" id="pCategory" name="category" required />
+        </div>
+        <div class="form-group">
+          <label for="pBrand">Brand</label>
+          <input type="text" id="pBrand" name="brand" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="pImage">Image URL</label>
+        <input type="url" id="pImage" name="image" placeholder="https://..." />
+      </div>
+
+      <div class="modal-close-row">
+        <button type="button" id="cancelModalBtn" class="btn btn-outline">Cancel</button>
+        <button type="submit" class="btn btn-accent">Save Product</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

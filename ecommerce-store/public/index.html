@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UrbanCart — Shop Smarter</title>
+<meta name="description" content="UrbanCart — a full stack e-commerce store." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div>
+        <p class="hero-eyebrow">Welcome to UrbanCart</p>
+        <h1>Everything you need, delivered to your door.</h1>
+        <p>Discover electronics, fashion, home essentials and more — all in one place, at prices that make sense.</p>
+        <a href="products.html" class="btn btn-accent">Shop All Products</a>
+      </div>
+      <div class="hero-art">
+        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=800" alt="Shopping bags and products" />
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="section-title"><h2>Browse by Category</h2></div>
+    <div class="categories-row" id="categoryChips"></div>
+
+    <div class="section-title">
+      <h2>Featured Products</h2>
+      <p><a href="products.html">View all →</a></p>
+    </div>
+    <div class="product-grid" id="featuredGrid"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    &copy; 2026 <span>UrbanCart</span>. Built as a Full Stack Internship Project.
+  </div>
+</footer>
+
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
